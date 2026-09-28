@@ -1,14 +1,11 @@
 # Research log
 
-## 2026-09-28 — 저번에 is unresolved in parse
+## 2026-09-28 — v2 raw scored
 
-- Issue #5 claim accepted: 14-day mapping is a retrieval heuristic.
-- v2 raw speed dump still not on the issue.
+- 40s wall clock on clean project.
+- Precision better than v1. Self-score false_fill=0 rejected because Q5 used 14-day 저번에.
+- Lock slugs for topic/state/intent.
 
-## 2026-09-28 — fill count is not quality
+## 2026-09-28 — 저번에 unresolved in parse
 
-- Score licensed precision, not filled_tags.
-
-## 2026-09-28 — repo opened
-
-- Public repo opened.
+- 14-day window is heuristic only.
