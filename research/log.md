@@ -1,11 +1,7 @@
 # Research log
 
-## 2026-09-28 — hybrid filter holds with real embeddings
+## 2026-09-28 — 116-memory hybrid keeps R@5 and cuts 91%
 
-- paraphrase-multilingual-MiniLM-L12-v2 on the same 17x5 set.
-- Vector-only R@5 0.800. Hybrid 1.000. Candidates and tokens drop.
-- Ballet gold was the vector miss. Deprecated combat ranked first without state filter.
-
-## 2026-09-28 — recency stays off
-
-- Tie-break only if enabled.
+- R@5 tied at 0.800. No gold drop. Candidates 116→11.
+- Ballet gold still misses R@5 after filter (8 survivors, rank >5).
+- Deprecated combat still wins vector@1 on query 3; hybrid recovers.
