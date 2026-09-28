@@ -1,15 +1,10 @@
 # Research log
 
-## 2026-09-28 — parse v3 accepted as format baseline
+## 2026-09-28 — 저번에 hard 14-day filter rejected
 
-- Slugs and `저번에` null-interval work.
-- `전에` / `몇 달 전` still underfill ranges.
-- Next: retrieval heuristic test, not parse v4.
+- A keep 2/5. B keep 5/5.
+- Default retrieve: licensed tags only. Recency may score, not cut.
 
-## 2026-09-28 — v2 raw scored
+## 2026-09-28 — parse v3 baseline
 
-- Korean topic tokens; `저번에` 14-day false/heuristic fill.
-
-## 2026-09-28 — fill count is not quality
-
-- Score licensed precision.
+- Slugs + unresolved `저번에` accepted.

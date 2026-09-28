@@ -1,13 +1,8 @@
 # Tag Schema
 
-Parse writes slugs, not surface Korean, for domain/topic/state.
+Parse slugs: domain/topic/state/intent in English.
 
-Domain: game, business, programming, design, research
-Topic: combat, music, story, character, ballet, lore, backend
-State: active, considering, confirmed, deprecated, rejected
+`저번에` parse: surface only, start/end null.
+`저번에` retrieve default: do not AND a 14-day window. Filter with licensed tags (usually domain=game). Optional recency boost in the ranker only.
 
-`전투` → combat. `폐기` → deprecated. Do not store the Korean token in those fields.
-
-`저번에`: surface only in parse. start/end null. 14-day window is retrieval heuristic only.
-
-Modifier scope: time on a rejected clause uses temporal_scope=exclude.
+Thought-table 2026-09-28: hard 14-day window kept 2/5 golds (dropped 20/45/90). Domain-only kept 5/5.
