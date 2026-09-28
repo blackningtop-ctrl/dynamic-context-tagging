@@ -1,13 +1,11 @@
 # Benchmark
 
-Focus queries: yesterday that game, ballet-related setting, deprecated combat vs new combat, last week's music decision, unnamed prior game.
-
 ## Metrics
 
 - Recall@k, temporal accuracy, state accuracy, tokens, latency
-- **Fill precision:** fraction of non-null tags licensed by the surface query
-- **False fill:** tags that would filter out a gold memory
+- licensed_filled / false_fill
+- filled_tags count is not quality
 
-Do not treat `filled_tags` count as quality. A higher fill rate can be worse if the extra fields are guessed.
+A forced `저번에 → 14일` interval is a heuristic. Score it separately from licensed tags.
 
-Issue #5 clean vs P0: 24 → 28 filled. The gain included `creative_project`, inherited `game`, and `topic=[game]`. Those are not automatic wins.
+Falsify the 14-day heuristic with gold memories at 3, 10, 20, 45, 90 days. If 14 days drops valid golds, keep parse unresolved.

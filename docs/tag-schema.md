@@ -2,23 +2,23 @@
 
 Dimensions: temporal, entity, domain, topic, intent, state, importance, relation.
 
-Never store `#어제` alone. Keep surface text plus an absolute interval.
+Never store `#어제` alone. Keep surface text plus an absolute interval when the surface licenses a range.
 
-| surface | range |
-|---|---|
-| 방금 / 아까 | last 2 hours |
-| 어제 | previous calendar day |
-| 지난주 | previous Mon–Sun |
-| 최근 | last 14 days |
-| 저번에 | last 14 days, or null + ambiguity |
-| 몇 달 전 | 60–120 days ago |
-| 예전에 / 전에 | before 90 days |
+| surface | parse | retrieval heuristic |
+|---|---|---|
+| 방금 / 아까 | last 2 hours | same |
+| 어제 | previous calendar day | same |
+| 지난주 | previous Mon–Sun | same |
+| 최근 | last 14 days | same |
+| 저번에 | surface only; start/end null | optional 14-day soft prior |
+| 몇 달 전 | 60–120 days ago | same |
+| 예전에 / 전에 | before 90 days | same |
 
-Closed domain vocab: `game`, `business`, `programming`, `design`, `research`. No free labels such as `creative_project`.
+`저번에` does not license 14 days. Counting a forced 14-day interval as licensed_filled is a false fill if the gold memory is older.
 
-`topic` is not `domain`. `game` is a domain. Do not copy it into `topic`.
-
-A tag that is not licensed by the current surface string stays null. Discourse/history inheritance is a separate mode, not default parse.
+Closed domain vocab: `game`, `business`, `programming`, `design`, `research`.
+`topic` is not `domain`.
+Unlicensed fields stay null.
 
 ## Modifier scope
 
@@ -26,5 +26,4 @@ A tag that is not licensed by the current surface string stays null. Discourse/h
 
 - time window describes the excluded event
 - keep-set is `topic=combat` AND `state != deprecated`
-- do not AND the months-ago window onto the active event
 - `temporal_scope: exclude` vs default `keep`
