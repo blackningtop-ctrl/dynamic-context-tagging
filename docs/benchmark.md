@@ -1,11 +1,7 @@
 # Benchmark
 
-Parse: licensed_filled / false_fill. Recency OFF.
-Conditional CE trigger: n>=8 or margin<0.04.
+Conditional CE numbers stay synthetic-only. No generalization claim.
 
-Synthetic only:
-- stock 5 + MiniLM + CE: R@5 1.000 on filtered CE
-- 80 template queries: always=cond R@5 0.912, 10.8% latency cut
-
-These numbers are not generalization evidence.
-Generalization wait: 50–100 owner-written queries in `data/benchmark/manual_holdout.jsonl`.
+Filter scale on uniform distractors:
+N=116/1k/10k → mean cand 11 / 81 / 792. Gold 5/5.
+Candidate count tracks N. Flat active-context hypothesis fails on this generator.
