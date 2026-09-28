@@ -1,7 +1,7 @@
 # Research log
 
-## 2026-09-28 — conditional CE keeps R@5, trims easy queries
+## 2026-09-28 — holdout cond CE accepted on a thin margin
 
-- Policy n>=8 or margin<0.04.
-- R@5 stays 1.000. Mean 94→79 ms.
-- Ballet still triggers. Two 2-candidate queries skip CE.
+- 80 new queries. R@5 matches always-CE at 0.912.
+- Latency save 10.8%. Fire 50/80.
+- Still synthetic prompts.
