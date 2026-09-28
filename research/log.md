@@ -1,6 +1,6 @@
 # Research log
 
-## 2026-09-28 — fixed-K ANN loses the hard gold as the project grows
+## 2026-09-28 — multi-probe flattens candidates, recall stays 4/5
 
-- R@5 stays 0.80 by already missing ballet at K=5.
-- R@20/50 drop. K required for ballet grows with N.
+- Probe 2–3 did not have to grow with N.
+- Not full gold recovery.
