@@ -47,27 +47,38 @@ def recency_score(mem: MemoryEvent, now: datetime, half_life_days: float = 14.0)
     return math.exp(-age / half_life_days)
 
 
+def tag_score(mem: MemoryEvent, query: QueryTags) -> float:
+    s = 0.0
+    if query.project_id and mem.project_id == query.project_id:
+        s += 3.0
+    s += 1.5 * len(set(query.topic) & set(mem.topic))
+    if query.domain and mem.domain == query.domain:
+        s += 1.0
+    if mem.importance == "high":
+        s += 0.5
+    if mem.importance == "critical":
+        s += 1.0
+    if mem.state == "deprecated":
+        s -= 1.0
+    return s
+
+
 def rerank(
     memories: list[MemoryEvent],
     query: QueryTags,
     now: datetime | None = None,
     recency_half_life: float | None = None,
+    recency_mode: str | None = None,
 ) -> list[MemoryEvent]:
-    def score(mem: MemoryEvent) -> float:
-        s = 0.0
-        if query.project_id and mem.project_id == query.project_id:
-            s += 3.0
-        s += 1.5 * len(set(query.topic) & set(mem.topic))
-        if query.domain and mem.domain == query.domain:
-            s += 1.0
-        if mem.importance == "high":
-            s += 0.5
-        if mem.importance == "critical":
-            s += 1.0
-        if mem.state == "deprecated":
-            s -= 1.0
-        if recency_half_life and now is not None:
+    def primary(mem: MemoryEvent) -> float:
+        s = tag_score(mem, query)
+        if recency_mode == "add" and recency_half_life and now is not None:
             s += recency_score(mem, now, recency_half_life)
         return s
 
-    return sorted(memories, key=lambda m: (score(m), m.id), reverse=True)
+    def secondary(mem: MemoryEvent) -> float:
+        if recency_mode == "tiebreak" and recency_half_life and now is not None:
+            return recency_score(mem, now, recency_half_life)
+        return 0.0
+
+    return sorted(memories, key=lambda m: (primary(m), secondary(m), m.id), reverse=True)
