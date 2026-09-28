@@ -82,3 +82,7 @@ def rerank(
         return 0.0
 
     return sorted(memories, key=lambda m: (primary(m), secondary(m), m.id), reverse=True)
+
+
+def should_cross_encode(n_candidates: int, top_margin: float, min_n: int = 8, max_margin: float = 0.04) -> bool:
+    return n_candidates >= min_n or top_margin < max_margin
