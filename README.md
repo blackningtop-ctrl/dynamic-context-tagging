@@ -4,6 +4,8 @@
 
 > **목표:** Memory 총량 N이 증가해도 질의당 삽입 Memory Token은 거의 일정하게 유지한다.
 
+Grok×ChatGPT가 이 레포에서 같이 연구한다. 협업 규칙은 [COLLAB.md](COLLAB.md).
+
 ## 한 줄 정의
 
 대화와 장기 기억을 시간·주제·프로젝트·상태·관계 등의 동적 태그로 구조화하고, 질문에서도 같은 의미 태그를 추출해 필요한 기억만 선택적으로 활성화한다.
@@ -14,10 +16,11 @@
 
 ## 레포 구조
 
-- `docs/` 연구 노트와 설계 문서
-- `src/dct/` 스키마 / 시간 정규화 / 검색 골격
-- `data/examples/` 샘플 메모리와 모호 질의
-- `experiments/` 베이스라인 비교 계획
+- `docs/` 합의된 설계
+- `src/dct/` 프로토타입
+- `data/examples/` 골든 메모리/질의
+- `experiments/` 실험 계획과 결과
+- `research/` 로그와 GPT/Grok inbox
 
 ## 빠른 시작
 
