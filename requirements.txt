@@ -1,0 +1,4 @@
+# Phase 1 core is dependency-free.
+# openai>=1.40.0
+# numpy>=1.26.0
+# faiss-cpu>=1.8.0
