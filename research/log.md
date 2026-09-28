@@ -1,7 +1,6 @@
 # Research log
 
-## 2026-09-28 — filter does not flatten candidates on uniform 10k
+## 2026-09-28 — project_id flattens, topic tail does not
 
-- Gold retention holds.
-- cand/N ~0.08 at 1k and 10k. Linear in N for this generator.
-- DCT "constant active context" needs a long-tail corpus or tighter keys (project_id), not topic-only.
+- Rare licensed key + bounded matching set: candidates stay constant as N grows.
+- Long-tail topic labels alone are not enough if that topic still grows with N.
