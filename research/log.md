@@ -1,6 +1,6 @@
 # Research log
 
-## 2026-09-28 — project_id flattens, topic tail does not
+## 2026-09-28 — constant context is bounded partitioning
 
-- Rare licensed key + bounded matching set: candidates stay constant as N grows.
-- Long-tail topic labels alone are not enough if that topic still grows with N.
+- Not project_id-the-string. The matching bucket must not grow with N.
+- 1k→100k with cap 20: candidates stay 3.6.
