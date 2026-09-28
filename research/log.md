@@ -1,7 +1,7 @@
 # Research log
 
-## 2026-09-28 — 116-memory hybrid keeps R@5 and cuts 91%
+## 2026-09-28 — cross-encoder recovers ballet gold
 
-- R@5 tied at 0.800. No gold drop. Candidates 116→11.
-- Ballet gold still misses R@5 after filter (8 survivors, rank >5).
-- Deprecated combat still wins vector@1 on query 3; hybrid recovers.
+- After licensed filter, mmarco MiniLM CE lifts ballet gold from rank 7 to 1.
+- Macro R@5 0.800 → 1.000. ~100 ms extra on the small candidate set.
+- Keep CE out of default install.
