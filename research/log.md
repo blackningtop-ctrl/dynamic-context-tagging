@@ -1,10 +1,11 @@
 # Research log
 
-## 2026-09-28 — hybrid filter accepted on synthetic set
+## 2026-09-28 — hybrid filter holds with real embeddings
 
-- Licensed domain/topic/state/time filter before rank kept R@5, cut candidates and tokens.
-- Vector stand-in was bag-of-words. Real embeddings still required.
+- paraphrase-multilingual-MiniLM-L12-v2 on the same 17x5 set.
+- Vector-only R@5 0.800. Hybrid 1.000. Candidates and tokens drop.
+- Ballet gold was the vector miss. Deprecated combat ranked first without state filter.
 
-## 2026-09-28 — recency tie-break is a safety rule
+## 2026-09-28 — recency stays off
 
-- OFF by default. If on, secondary key only.
+- Tie-break only if enabled.
