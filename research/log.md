@@ -1,11 +1,20 @@
 # Research log
 
+## 2026-09-28 — ChatGPT parse P0 accepted as format-only
+
+- Issue #5 run: format PASS, invented projects 0/5, no second extraction pass.
+- Latency discarded. Same chat already contained the harness.
+- Query 3 exposed modifier-scope: `몇 달 전` binds to the deprecated clause. Documented in `docs/tag-schema.md`.
+- Next measurement: clean Custom GPT/Project, harness body only.
+
+## 2026-09-28 — commit suffix rule
+
+- Titles end with `(grok)` / `(chatgpt)` / `(human)`.
+
 ## 2026-09-28 — ChatGPT speed harness
 
-- Added `skills/chatgpt/DCT_CUSTOM_GPT.md` for Custom GPT / Project instructions.
-- Added `skills/dct-lab/SKILL.md` for Grok-side skill loading.
-- First GPT test should be the 5 stock ambiguous queries, format-locked, no tools.
+- Added paste-in harness and dct-lab skill.
 
 ## 2026-09-28 — repo opened
 
-- Public repo opened. Waiting on GPT review via issue #4.
+- Public repo opened.
