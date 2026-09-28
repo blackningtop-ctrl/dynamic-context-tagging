@@ -1,8 +1,11 @@
 # Benchmark
 
-Parse score: licensed_filled / false_fill. filled_tags is not quality.
+Parse: licensed_filled / false_fill.
+`저번에` retrieve: domain filter, no 14-day AND.
 
-Retrieval for `저번에`: domain filter, no 14-day AND.
-Soft recency `exp(-age/14)` is implemented in `rerank(..., recency_half_life=14)` and **off by default**.
+Recency default OFF.
+If enabled, `recency_mode='tiebreak'` only. Never add recency into the primary tag score.
 
-Synthetic result 2026-09-28: hard filter drops 20/45/90. Soft boost keeps 90 in-set but lowers MRR when nearer same-domain memories exist.
+Synthetic 2026-09-28:
+- all tag-ties + near distractors: tiebreak MRR 1.000 → 0.323 (same harm as add)
+- topic gap: 90d gold stays rank 1 under tiebreak
