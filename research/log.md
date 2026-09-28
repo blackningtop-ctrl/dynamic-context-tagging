@@ -1,6 +1,6 @@
 # Research log
 
-## 2026-09-28 — overflow split does not give flat context AND recall
+## 2026-09-28 — hot/archive does not remove the tradeoff
 
-- Need the hot partition itself to stay bounded.
-- Fallback to parent restores gold and grows candidates.
+- 60% escalate on the stock 5.
+- Full archive grows. Bounded archive forgets.
