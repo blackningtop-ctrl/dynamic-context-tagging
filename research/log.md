@@ -1,6 +1,6 @@
 # Research log
 
-## 2026-09-28 — constant context is bounded partitioning
+## 2026-09-28 — overflow split does not give flat context AND recall
 
-- Not project_id-the-string. The matching bucket must not grow with N.
-- 1k→100k with cap 20: candidates stay 3.6.
+- Need the hot partition itself to stay bounded.
+- Fallback to parent restores gold and grows candidates.
