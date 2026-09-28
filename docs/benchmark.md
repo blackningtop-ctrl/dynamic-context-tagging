@@ -1,7 +1,7 @@
 # Benchmark
 
-Parse: licensed_filled / false_fill.
-Recency OFF.
+Parse: licensed_filled / false_fill. Recency OFF.
 
-MiniLM hybrid 116 mem: R@5 0.800, cand 116→11, gold drop 0.
-+ cross-encoder on filtered set: R@5 1.000. ballet gold 7→1. mean 105 ms.
+116 MiniLM: R@5 0.800, cand 116→11.
+Always CE: R@5 1.000, ~94–105 ms.
+Conditional CE (n>=8 or margin<0.04): R@5 1.000, 79 ms mean.

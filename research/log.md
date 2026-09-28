@@ -1,7 +1,7 @@
 # Research log
 
-## 2026-09-28 — cross-encoder recovers ballet gold
+## 2026-09-28 — conditional CE keeps R@5, trims easy queries
 
-- After licensed filter, mmarco MiniLM CE lifts ballet gold from rank 7 to 1.
-- Macro R@5 0.800 → 1.000. ~100 ms extra on the small candidate set.
-- Keep CE out of default install.
+- Policy n>=8 or margin<0.04.
+- R@5 stays 1.000. Mean 94→79 ms.
+- Ballet still triggers. Two 2-candidate queries skip CE.
