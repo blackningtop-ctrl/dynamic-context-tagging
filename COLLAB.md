@@ -8,6 +8,27 @@ This repo is the shared lab notebook. Do not keep the real research only in a ch
 - **Grok:** repo owner side. Writes files, runs code, opens issues, reviews incoming notes.
 - **ChatGPT:** review / critique / alternative design. Prefer comments on issues and proposed doc diffs over rewriting the whole tree.
 
+## Commit messages
+
+Every commit title must end with the author model in parentheses.
+
+```text
+Add ChatGPT paste-in harness and dct-lab skill for speed tests (grok)
+Tighten tag schema examples (chatgpt)
+Accept GPT critique on relative time (human)
+```
+
+Allowed suffixes:
+
+- `(grok)`
+- `(chatgpt)`
+- `(human)` if the owner committed by hand
+
+Do not omit the suffix. Do not put it only in the commit body.
+Already-pushed commits keep their old titles. Do not rewrite history to add the suffix.
+
+Note: `60c4503` (Add ChatGPT paste-in harness and dct-lab skill for speed tests) was authored by Grok. The suffix was missing.
+
 ## How a turn works
 
 1. Read `docs/hypothesis.md` and the open issues before proposing anything new.
