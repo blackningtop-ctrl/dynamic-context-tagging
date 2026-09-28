@@ -1,0 +1,72 @@
+[
+  {
+    "id": "mem_001",
+    "created_at": "2026-09-20T18:12:00+09:00",
+    "project_id": "project-prima",
+    "domain": "game",
+    "topic": ["combat"],
+    "intent": "decide",
+    "state": "active",
+    "importance": "high",
+    "entities": ["Project Prima"],
+    "temporal": {"surface": "어제", "start": "2026-09-20T00:00:00+09:00", "end": "2026-09-20T23:59:59+09:00"},
+    "summary": "Project Prima combat changed from turn-based to realtime.",
+    "text": "Project Prima realtime combat decision."
+  },
+  {
+    "id": "mem_002",
+    "created_at": "2026-07-02T14:00:00+09:00",
+    "project_id": "project-prima",
+    "domain": "game",
+    "topic": ["combat"],
+    "intent": "decide",
+    "state": "deprecated",
+    "importance": "medium",
+    "entities": ["Project Prima"],
+    "temporal": {"surface": "몇 달 전", "start": "2026-07-02T00:00:00+09:00", "end": "2026-07-02T23:59:59+09:00"},
+    "summary": "Old turn-based combat, later replaced.",
+    "text": "Turn-based combat first."
+  },
+  {
+    "id": "mem_003",
+    "created_at": "2026-09-14T21:00:00+09:00",
+    "project_id": "project-prima",
+    "domain": "game",
+    "topic": ["music", "ballet"],
+    "intent": "decide",
+    "state": "active",
+    "importance": "high",
+    "entities": ["Project Prima"],
+    "temporal": {"surface": "지난주", "start": "2026-09-14T00:00:00+09:00", "end": "2026-09-14T23:59:59+09:00"},
+    "summary": "Region themes arranged from ballet source music.",
+    "text": "Music direction: ballet arrangements."
+  },
+  {
+    "id": "mem_004",
+    "created_at": "2026-09-18T11:00:00+09:00",
+    "project_id": "project-prima",
+    "domain": "game",
+    "topic": ["character", "ballet"],
+    "intent": "modify",
+    "state": "active",
+    "importance": "high",
+    "entities": ["Project Prima"],
+    "temporal": {"surface": "최근", "start": "2026-09-18T00:00:00+09:00", "end": "2026-09-18T23:59:59+09:00"},
+    "summary": "Ballet-motif protagonist silhouette rework.",
+    "text": "Rework ballet character silhouette."
+  },
+  {
+    "id": "mem_005",
+    "created_at": "2026-09-10T09:00:00+09:00",
+    "project_id": "tight-judge",
+    "domain": "game",
+    "topic": ["music"],
+    "intent": "modify",
+    "state": "active",
+    "importance": "medium",
+    "entities": ["Tight Judge"],
+    "temporal": {"surface": "최근", "start": "2026-09-10T00:00:00+09:00", "end": "2026-09-10T23:59:59+09:00"},
+    "summary": "Tight Judge judgment window discussion.",
+    "text": "Tighten judgment and revisit music offset."
+  }
+]
