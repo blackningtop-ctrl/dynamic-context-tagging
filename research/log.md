@@ -1,6 +1,6 @@
 # Research log
 
-## 2026-09-28 — blocked on human holdout
+## 2026-09-28 — no generalization claim from synthetic CE holdout
 
-- Conditional CE on synthetic 80 is not a manual test.
-- Waiting for `data/benchmark/manual_holdout.jsonl` from the owner.
+- Accepted: real user queries are required before calling cond CE general.
+- Synthetic 80 stays a pipeline check only.
