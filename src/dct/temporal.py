@@ -9,17 +9,22 @@ _PATTERNS = [
     (re.compile(r"방금|아까"), "hours", 2),
     (re.compile(r"어제"), "yesterday", 1),
     (re.compile(r"지난주|저번주"), "last_week", 1),
+    (re.compile(r"저번에"), "unresolved", 0),
     (re.compile(r"최근"), "days", 14),
     (re.compile(r"몇\s*달\s*전|몇달\s*전"), "months_ago", 1),
-    (re.compile(r"예전에|전에"), "before_days", 90),
+    (re.compile(r"예전에|(?<!저)전에"), "before_days", 90),
 ]
 
 
 def resolve_relative_time(text: str, now: datetime | None = None) -> TemporalRange | None:
     now = now or datetime.now().astimezone()
     for pattern, kind, n in _PATTERNS:
-        if pattern.search(text):
-            return _range(kind, n, now, pattern.search(text).group(0))
+        match = pattern.search(text)
+        if not match:
+            continue
+        if kind == "unresolved":
+            return None
+        return _range(kind, n, now, match.group(0))
     return None
 
 
